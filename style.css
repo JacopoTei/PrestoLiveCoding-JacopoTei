@@ -7,6 +7,18 @@
 body {background-color: beige;
     font-family: 'Roboto', sans-serif;
 }
+.navbar-custom{
+    margin: 5vh 15vh 0vh 15vh ;
+    border-radius: 10px;
+}
+.transition{ 
+    transition: 1s;
+}
+
+
+
+
+
 
 /* Modifica altri stili dei tuoi elementi HTML */
 .card {
@@ -15,20 +27,8 @@ body {background-color: beige;
 .card-deck {
     margin-top: 20px; /* Aggiungi margine superiore alle card */
 }
-.box{border-radius: 100px; 
-    border: 2px solid rgb(180, 7, 7);
-     width: 200px; 
-     height: 200px; 
-     display: flex; 
-     justify-content: center; 
-     align-items: center;
-    background-color: white;
-}
-/* Stile per il box con l'immagine */
-.box {
-    display: inline-block; /* Permette al box di adattarsi alle dimensioni dell'immagine */
-    
-}
+
+
 
 /* Applica text-align: start al paragrafo */
 .p1 {
@@ -36,10 +36,6 @@ body {background-color: beige;
 }
 .p2 {text-align: end;}
 
-.pic{border-radius: 100px;
-   margin-left: 3px;
-   margin-top: 3px;
-}
 
 .links{text-align: center;} 
 
@@ -51,9 +47,26 @@ color: white;}
 
 }
 .links2{ margin-left: 30px;}
-h3{ margin-left: 60px;}
+.h3{ margin-left: 60px;}
+
+/* prova  */
+.img-category{
+    width: 100%;
+    border-radius: 50%;
+    border: 2px solid rgb(180, 7, 7);
+    background-color: white;
+    padding: 5px;
+}
 
 
+.boxNumbers{
+    height: 100px;
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    border-radius: 10px; }
 
 
 
@@ -84,6 +97,11 @@ h3{ margin-left: 60px;}
     footer {
         font-size: 14px;
         text-align: start;
+    }
+    .boxNumbers {
+        width: 100%; /* Imposta la larghezza al 100% per occupare tutto lo spazio disponibile */
+        max-width: 300px; /* Imposta una larghezza massima per evitare che diventino troppo grandi */
+        margin-bottom: 20px; /* Aggiungi un margine inferiore per separare i div */
     }
 
 }

@@ -1,72 +1,42 @@
-const cardData = [
-    {
-        title: "Card 1",
-        description: "Descrizione per Card 1",
-        buttonText: "Bottone 1",
-        buttonColor: "primary"
-    },
-    {
-        title: "Card 2",
-        description: "Descrizione per Card 2",
-        buttonText: "Bottone 2",
-        buttonColor: "secondary"
-    },
-    {
-        title: "Card 3",
-        description: "Descrizione per Card 3",
-        buttonText: "Bottone 3",
-        buttonColor: "success"
-    },
-    {
-        title: "Card 4",
-        description: "Descrizione per Card 4",
-        buttonText: "Bottone 4",
-        buttonColor: "danger"
-    },
-    {
-        title: "Card 5",
-        description: "Descrizione per Card 5",
-        buttonText: "Bottone 5",
-        buttonColor: "warning"
-    },
-    {
-        title: "Card 6",
-        description: "Descrizione per Card 6",
-        buttonText: "Bottone 6",
-        buttonColor: "info"
+let navbar = document.querySelector("#navbar")
+
+window.addEventListener("scroll", ()=>{
+    // console.log(window.scrollY)
+    if(window.scrollY > 0){
+        navbar.classList.add("navbar-custom")
+    }else {
+        navbar.classList.remove("navbar-custom")
+
     }
-];
+})
 
-// Funzione per generare le card orizzontali
-function generateHorizontalCards() {
-    const cardContainer = document.getElementById("cardContainer");
+let articlesNumber = document.querySelector("#articlesNumber");
+let usersNumber = document.querySelector("#usersNumber");
+let productsNumber = document.querySelector("#productsNumber");
 
-    cardData.forEach((data, index) => {
-        const cardHtml = `
-            <div class="card mb-3 mt-5">
-                <div class="row g-0 ">
-                    
-                       
-                    
-                    <div class="col-md-12">
-                        <div class="card-body">
-                            <h5 class="card-title">${data.title}</h5>
-                            <p class="card-text">${data.description}</p>
-                            <button class="btn btn-${data.buttonColor}">${data.buttonText}</button>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        `;
-        cardContainer.innerHTML += cardHtml;
-    });
-}
+function startCounter(limit, targetElement) {
+    let counter = 0;
+    let interval = setInterval(() => {
+      if (counter < limit) {
+        counter++;
+        targetElement.innerHTML = counter;
+        console.log(counter);
+      } else {
+        clearInterval(interval);
+      }
+    }, 1);
+  }
+  
+  // Utilizza la funzione startCounter per iniziare un nuovo conteggio
+  startCounter(1000, articlesNumber);
+  // Esempio di utilizzo per aggiornare "#usersNumber"
+startCounter(2000, usersNumber);
 
-// Chiama la funzione per generare le card orizzontali
-generateHorizontalCards();
+// Esempio di utilizzo per aggiornare "#productsNumber"
+startCounter(500, productsNumber);
 
     document.addEventListener("DOMContentLoaded", function () {
-        const searchButton = document.getElementById("searchButton");
+        let searchButton = document.getElementById("searchButton");
 
         searchButton.addEventListener("click", function () {
             // Cambia il colore del tasto di ricerca a rosso
@@ -74,3 +44,9 @@ generateHorizontalCards();
             searchButton.classList.add("btn-danger");
         });
     });
+
+    
+
+   
+
+
