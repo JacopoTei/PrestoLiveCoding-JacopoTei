@@ -73,7 +73,7 @@
                     <img src="https://picsum.photos/1920/1080?random=3" class="d-block w-100" alt="Immagine 3">
                 </div>
             </div>
-    
+            
             <!-- Controlli del Carousel -->
             <a class="carousel-control-prev" href="#myCarousel" role="button" data-bs-slide="prev">
                 <span class="carousel-control-prev-icon" aria-hidden="true"></span>
@@ -85,14 +85,23 @@
             </a>
         </div>
         
-      <section class="container">
-        <div class="row my-5">
-            <div class="col-12">
-                <h2 class="color-p display-1 text-center border-bottom ">CATEGORIE</h2>
-            </div>
+        <div class="container mt-5">
+            <form id="searchForm" class="form-inline justify-content-center">
+                <div class="input-group">
+                    <input type="text" class="form-control" id="searchInput" placeholder="Cerca prodotti">
+                    <button type="button" class="btn btn-secondary" id="searchButton">Cerca</button>
+                </div>
+            </form>
         </div>
-        <div class="row justify-content-evenly">
-            <div class="col-6 col-md-3 mx-2 my-5">
+        
+        <section class="container">
+            <div class="row my-5">
+                <div class="col-12">
+                    <h2 class="color-p display-1 text-center border-bottom ">CATEGORIE</h2>
+                </div>
+            </div>
+            <div class="row justify-content-evenly">
+                <div class="col-6 col-md-3 mx-2 my-5">
                 <img class="img-category" src="https://picsum.photos/200" alt="" data-aos="fade-right" >
             </div>
             <div class="col-6 col-md-3 mx-2 my-5">
@@ -131,14 +140,6 @@
     </section>
     
 
-    <div class="container mt-5">
-        <form id="searchForm" class="form-inline justify-content-center">
-            <div class="input-group">
-                <input type="text" class="form-control" id="searchInput" placeholder="Cerca prodotti">
-                <button type="button" class="btn btn-secondary" id="searchButton">Cerca</button>
-            </div>
-        </form>
-    </div>
 
     <div class="container mt-5">
     <div class="d-flex justify-content-evenly">
