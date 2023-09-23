@@ -51,7 +51,8 @@ color: white;}
 
 /* prova  */
 .img-category{
-    width: 100%;
+    width: 280px;
+    height: 280px;
     border-radius: 50%;
     border: 2px solid rgb(180, 7, 7);
     background-color: white;
@@ -68,10 +69,17 @@ color: white;}
     flex-direction: column;
     border-radius: 10px; }
 
+    .card:hover>div>img{
+        transform: scale(1.2);
+    }
+    
+    .secondary1:hover {
+        background-color: #dc3545; /* Cambia il colore di sfondo in rosso */
+        border-color: #dc3545; /* Cambia il colore del bordo in rosso */
+        color: #fff; /* Cambia il colore del testo in bianco */
+    }
 
-
-
-
+.img-prop{height: 250px;}
 
 
 
@@ -97,12 +105,21 @@ color: white;}
     footer {
         font-size: 14px;
         text-align: start;
+        display: inline-block;
     }
     .boxNumbers {
         width: 100%; /* Imposta la larghezza al 100% per occupare tutto lo spazio disponibile */
         max-width: 300px; /* Imposta una larghezza massima per evitare che diventino troppo grandi */
         margin-bottom: 20px; /* Aggiungi un margine inferiore per separare i div */
     }
+    .card {
+        width: 80%;
+        height: 85%; /* Puoi regolare la larghezza come preferisci */
+        margin: 0 auto; /* Per centrare le card orizzontalmente */
+    }
+
+    .img-category{width: 150px;
+    height: 150px;}
 
 }
 
