@@ -85,7 +85,7 @@ color: white;}
 
 
 
-@media (max-width: 789px) {
+@media (max-width: 1024px) {
     .box {
         display: block; /* Cambia il display dei box in block per una visualizzazione verticale */
         margin-top: 20px; /* Aumenta il margine in alto per separare i box */
@@ -113,16 +113,19 @@ color: white;}
         margin-bottom: 20px; /* Aggiungi un margine inferiore per separare i div */
     }
     .card {
-        width: 80%;
-        height: 85%; /* Puoi regolare la larghezza come preferisci */
+        width: 95%;
+        height: 90%; /* Puoi regolare la larghezza come preferisci */
         margin: 0 auto; /* Per centrare le card orizzontalmente */
     }
 
-    .img-category{width: 150px;
-    height: 150px;}
+    .img-category{width: 200px;
+    height: 200px;}
+    
+    .secondary1{ width: 50%;
+    font-size: smaller;}
 
-}
-
+    footer{ width: 100%;}
+    }
 
 
 
