@@ -102,7 +102,7 @@ annunci.forEach((annuncio, i)=>{
                     <img src="${annuncio.url}" class="card-img-top transition img-prop" alt="...">
                 </div>
                 <span class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger">NEW</span>
-                <div class="card-body">
+                <div class="card-body shadow">
                 <h5 class="card-title">${annuncio.nome}</h5>
                 <p class="card-text">${annuncio.categoria}</p>
                 <p class="card-text fw-bold">Prezzo: ${annuncio.prezzo}$</p>
@@ -134,3 +134,24 @@ hearts.forEach((heart)=>{
 
 
 })
+
+const swiper = new Swiper(".mySwiper", {
+    effect: "coverflow",
+    grabCursor: true,
+    centeredSlides: true,
+    slidesPerView: "auto",
+    coverflowEffect: {
+      rotate: 50,
+      stretch: 0,
+      depth: 100,
+      modifier: 1,
+      slideShadows: false,
+    },
+    navigation: {
+        nextEl: '.swiper-button-next',
+        prevEl: '.swiper-button-prev',
+    },
+    pagination: {
+        el: ".swiper-pagination"
+    }
+  });
