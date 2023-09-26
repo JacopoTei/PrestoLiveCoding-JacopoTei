@@ -14,7 +14,6 @@ fetch("./annunci.json").then((response)=> response.json()).then((data)=> {
 
     let cardsWrapper = document.querySelector("#cardsWrapper")
 
-    //CREAZIONE ANNUNCI
 
     function createCards(array){
         cardsWrapper.innerHTML = "";
@@ -44,7 +43,6 @@ fetch("./annunci.json").then((response)=> response.json()).then((data)=> {
     }
     createCards(data);
 
-    // FILTRO PER CATEGORIA 
     let categoryButtons = document.querySelector("#categoryButtons")
 
     function setCategories(){
@@ -75,16 +73,16 @@ fetch("./annunci.json").then((response)=> response.json()).then((data)=> {
 
     let inputChecks = document.querySelectorAll(".form-check-input");
 
-    function filterByCategory(){
+    function filterByCategory(array){
         let arrayButtons = Array.from(inputChecks)
         let checked = arrayButtons.find((el)=> el.checked )
 
         if(checked.id == "All"){
-            createCards(data);
+           return data;
 
         }else {
-            let filtered = data.filter((el)=> el.categoria == checked.id )
-            createCards(filtered);
+            let filtered = array.filter((el)=> el.categoria == checked.id )
+            return filtered;
         }
 
 
@@ -92,12 +90,12 @@ fetch("./annunci.json").then((response)=> response.json()).then((data)=> {
 
     inputChecks.forEach((radioButton)=>{
         radioButton.addEventListener("click", ()=>{
-            filterByCategory();
+            filterByCategory(data);
         })
 
     })
 
-    // FILTRO PER PREZZO 
+
     let inputPrice = document.querySelector("#inputPrice");
     let price = document.querySelector("#price");
 
@@ -113,31 +111,35 @@ fetch("./annunci.json").then((response)=> response.json()).then((data)=> {
     }
     minMaxPrices()
 
-    function filterByPrice(){
+    function filterByPrice(array){
         // console.log(inputPrice.value)
-        let filtered = data.filter((el)=> el.prezzo <= inputPrice.value).sort((a, b)=> b.prezzo - a.prezzo)
+        let filtered = array.filter((el)=> el.prezzo <= inputPrice.value).sort((a, b)=> b.prezzo - a.prezzo)
         price.innerHTML = inputPrice.value;
-        createCards(filtered);
+        return filtered;
     }
 
     inputPrice.addEventListener("input", ()=>{
-        filterByPrice();
+        globalFilter();
     })
     
-    // FILTRO PER PAROLA 
     let wordInput = document.querySelector("#wordInput");
 
-    function filterByWord(){
+    function filterByWord(array){
         let value = wordInput.value;
-        let filtered = data.filter((el)=> el.nome.toLowerCase().includes(value.toLowerCase()))
-        createCards(filtered)
+        let filtered = array.filter((el)=> el.nome.toLowerCase().includes(value.toLowerCase()))
+        return filtered
     }
 
     wordInput.addEventListener("input", ()=>{
-        filterByWord();
+        globalFilter();
     })
 
-
+    function globalFilter(){
+    let filteredByCategory = filterByCategory (data)
+    let filteredByPrice = filterByPrice (filteredByCategory)
+    let filteredByWord = filterByWord (filteredByPrice)
+    createCards(filteredByWord)
+    }
 
 
 

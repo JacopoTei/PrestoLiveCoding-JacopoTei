@@ -81,6 +81,8 @@ color: white;}
 
 .img-prop{height: 250px;}
 
+.nav-animation:hover{  transform: scale(1.2);
+    transition: transform 0.3s;}
 
 
 

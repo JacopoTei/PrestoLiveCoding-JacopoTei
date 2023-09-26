@@ -95,7 +95,7 @@ annunci.forEach((annuncio, i)=>{
     if(i >= annunci.length - 3){
 
         let div = document.createElement("div")
-        div.classList.add("col-12", "col-md-6", "col-lg-4", "my-5" )
+        div.classList.add("col-12", "col-md-6", "col-lg-3", "my-5" )
         div.innerHTML = `
             <div class="card">
                 <div class="overflow-hidden">
